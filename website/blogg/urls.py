@@ -1,5 +1,4 @@
 from django.conf.urls import url
-from testapp.views import Home
 from .views import BlogData
 from .views import bloggTest
 from .views import Contact,Thanks,StudentInsert,BlogPost,Home,AboutUs
