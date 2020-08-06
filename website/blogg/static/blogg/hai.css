@@ -1,0 +1,21 @@
+body
+{
+
+background-color: yellow;
+
+}
+h1
+{
+	color: lightgreen;
+	font-size: 50px
+}
+
+p
+{
+	color:red;
+	font-size: 20px
+}
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+.container { overflow: hidden; }

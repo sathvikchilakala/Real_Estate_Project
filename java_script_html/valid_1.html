@@ -1,0 +1,73 @@
+<html>
+<head>
+<script>
+function checkdetails()
+{
+var uname=f1.uname.value;//pinky
+var pass=f1.pass.value;//1234567
+var cpass=f1.cpass.value;//1234567
+
+if(uname=="")//pinky==""
+{
+alert("Please enter username");
+f1.uname.focus();
+return false;
+}
+
+else if(pass=="")
+{
+alert("Please enter the password");
+f1.pass.focus();
+return false;
+}
+
+else if(pass.length<6)
+{
+alert("Password should be more than six letters");
+f1.pass.focus();
+return false;
+}
+
+else if(cpass=="")
+{
+alert("Please enter the confirmed password");
+f1.cpass.focus();
+return false;
+}
+
+else if(pass!=cpass)
+{
+alert("Password and Confirm password must be matched");
+f1.cpass.focus();
+return false;
+}
+
+else
+{
+return true;
+}
+}
+</script>
+</head>
+
+<body bgcolor="yellow">
+<center>
+
+<form action="go.html" name="f1" method="post">
+
+Username:
+<input type="text" name="uname"><br>
+
+Password:
+<input type="password" name="pass"><br>
+
+Confirm Password:
+<input type="password" name="cpass"><br>
+
+<input type="submit" value="login" onClick="return checkdetails()">
+
+<input type="reset" value="reset">
+</form>
+</center>
+</body>
+</html>

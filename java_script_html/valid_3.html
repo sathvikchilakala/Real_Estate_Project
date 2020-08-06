@@ -1,0 +1,61 @@
+<html>
+<head>
+<script>
+function checkdetails()
+{
+
+if(f1.gen[0].checked==false && f1.gen[1].checked==false)
+{
+alert("Please tell the gender");
+return false;
+}
+
+else if(f1.hob[0].checked==false && f1.hob[1].checked==false)
+{
+alert("Please tell your hobbies");
+return false;
+}
+
+
+else if(f1.city.selectedIndex==0)
+{
+alert("Please tell your city");
+return false;
+}
+
+
+else
+{
+return true;
+}
+}
+</script>
+</head>
+
+<body bgcolor="yellow">
+<form action="go.html" name="f1" method="post"  onsubmit="return checkdetails()">
+
+Gender:
+
+<input type="radio" name="gen" value="male">Male
+<input type="radio" name="gen" value="female">Female<br>
+
+Hobbies:
+<input type="checkbox" name="hob" value="reading-books">Reading books
+<input type="checkbox" name="hob" value="watching-tv">Watching TV
+<br>
+City
+<select name="city">
+<option>Choose City</option>
+<option>VSKP</option>
+<option>VZM</option>
+<option>SKLM</option>
+<option>RJY</option>
+<option>NLR</option>
+
+
+<input type="submit" value="Submit" >
+<input type="reset" value="Reset">
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Welcome to Real Estate Page!</title>
+{% endblock %}
+
+{% block content %}
+
+{% for i in blogdb %}
+
+
+     <div class="blog-post">
+        <h2 class="blog-post-title">{{i.title}}</h2>
+        <p class="blog-post-meta">{{i.created_date}} by  <a href="#">{{i.author}}</a></p>
+
+        <p>{{i.text}}</p>
+        </div><!-- /.blog-post -->
+
+{% endfor %}
+{% endblock  %}

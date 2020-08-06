@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function doAlert()
+{
+alert("Dont close this page");
+
+}
+function doPrompt()
+{
+var name=prompt("Enter your name","your name is:");//pinky
+if(name!=null && name!="")
+alert("Hello "+name);
+else
+alert("Please tell your name");
+}
+function doConfirm()
+{
+var retval=confirm("Is java easy");//No....false
+if(retval==true)
+alert("You are wrong");
+else
+alert("Intelligent");
+}
+</script>
+</head>
+<body bgcolor="yellow">
+<input type="button" value="Show alert" onClick="doAlert()">
+<input type="button" value="Show prompt" onClick="doPrompt()">
+<input type="button" value="Show confirm" onClick="doConfirm()">
+
+</body>
+</html>
