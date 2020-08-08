@@ -1,41 +1,5 @@
 from django.http import HttpResponse
-
-def AboutUs(request):
-	return HttpResponse('<body bgcolor="yellow"> <center><h1>Welcome to my AboutUs Page</h1></center><br></body>')
-	
-def Contact(request):
-	return HttpResponse('<body bgcolor="yellow"> <center><h1>Welcome to my contact page</h1></center><br></body>')
-
-def Product(request):
-	return HttpResponse('<body bgcolor="yellow"> <center><h1>Welcome to my Product page</h1></center><br></body>')
-
-def Hello(request):
-	return HttpResponse('<body bgcolor="yellow"> <center><h1>Hello!!! Welcome to my blog page</h1></center><br></body>')
-
-from django.http import HttpResponse
 from django.shortcuts import render
-
-def HelloTemplate(request):
-	context={}
-	return render(request,'hello.html',context)
-
-def ProductStatic(request):
-    context={}
-    return render(request,'prod.html',context)
-
-def ProductDynamicOneRecord(request):
-    context={'pid':1001,'pname':'Django Framework','price':450,'author':'Milton'}
-    return render(request,'prodonedy.html',context)
-
-def Products(request):
-    context={'proddb':[
-    {'pid':101,'pname':'Dive into python 3','price':450,'author':'Milton'},
-    {'pid':102,'pname':'Python algorithms','price':550,'author':'Charles'},
-    {'pid':103,'pname':'Networking python','price':650,'author':'Miller'},
-    {'pid':104,'pname':'Advanced python','price':350,'author':'Robert'},
-    {'pid':105,'pname':'Python for automation','price':367,'author':'Smith'}
-                      ]}
-    return render(request,'prodsmultiple.html',context)
 
 from .models import Post   
 def BlogData(request): 
@@ -47,7 +11,6 @@ def bloggTest(request):
     return render(request,'blogg/test.html',context)
 
 def Thanks(request): 
-    #return HttpResponse("Thank you and Have a great day!!!,I will inform you soon")
     return render(request,'blogg/thankyou.html',{})
 
 from django.http import HttpResponse,HttpResponseRedirect
@@ -121,7 +84,7 @@ def BlogPost(request):
             Property_Details=form.cleaned_data['Property_Details']
             created_date = form.cleaned_data['created_date']
             Post.objects.create(Your_Name_REGISTRATION_REQUIRED=Your_Name_REGISTRATION_REQUIRED,Property_Location=Property_Location,Property_Details=Property_Details,created_date=created_date)
-            return HttpResponseRedirect('/blog/thanks/')            
+            return HttpResponseRedirect('/real_estate/thanks/')            
     return render(request,'blogg/post_blog.html',context)
 
 def Home(request):
