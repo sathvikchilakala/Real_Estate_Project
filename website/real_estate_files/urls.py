@@ -10,6 +10,6 @@ urlpatterns = [
         url(r'^post_property/',BlogPost,name='postblog'),
         url(r'^$',Home,name='home'),
         url(r'^aboutus/',AboutUs,name='aboutus'),
-
+		
 
 ]
