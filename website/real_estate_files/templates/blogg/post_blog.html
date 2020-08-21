@@ -10,11 +10,15 @@
 {% block  content %}
 
 <center>
-<form role="form" action="" method="post">
-{% csrf_token %}
-<!--{{ form.as_ul}} --> <!-- commented -->
-{{form | crispy}} 
-<button type="submit">submit</button>
-</form>
+<aside class="col-md-4 blog-sidebar">
+    <div class="h4 mb-3 rounded bg-info text-white font-italic">
+	<form role="form" action="" method="post">
+	{% csrf_token %}
+	<!--{{ form.as_ul}} --> <!-- commented -->
+	{{form | crispy}}
+	<br>
+	<button type="submit">Submit</button>
+	</form>
+	</div>
 </center>
 {% endblock %}

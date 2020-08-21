@@ -13,7 +13,7 @@ from .models import EnqDB
 class EnqDBForm(forms.ModelForm) :
     class Meta :
         model = EnqDB
-        fields = ['name','mail','mno','agent','message']# Write only the attributes of the EnqDB class
+        fields = ['contact_name','contact_email','phone_number','agent_name','property_description']# Write only the attributes of the EnqDB class
 
 from .models import Post   #<====added from here
 

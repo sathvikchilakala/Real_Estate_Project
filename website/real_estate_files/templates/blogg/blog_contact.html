@@ -3,7 +3,7 @@
 
 
 {% block title %}
-<title>Join with us</title>
+<title>Contact Sathvik Chilakala</title>
 {% endblock %}
 
 
@@ -11,11 +11,16 @@
 {% block  content %}
 
 <center>
-<form role="form" action="" method="post">
-{% csrf_token %}
-<!-- {{ form.as_ul}} -->
-{{form | crispy}}
-<button type="submit">submit</button>
-</form>
-</center>
+<aside class="col-md-4 blog-sidebar">
+	<div class="h5 mb-3 rounded bg-info text-white font-italic">
+	<form role="form" action="" method="post">
+	{% csrf_token %}
+	<!-- {{ form.as_ul}} -->
+	{{form | crispy}}
+	<br>
+	<button type="submit">Submit</button>
+	<br>
+	</form>
+	</div>
+	</center>
 {% endblock %}

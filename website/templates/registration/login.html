@@ -3,13 +3,23 @@
 
 {% block content %}
 <form method="post" action=".">
-  {% csrf_token %} 
-  {{ form.as_p }}
+    <div class="p-4 mb-3 rounded bg-info text-white font-italic">
+	<div style="margin:0 auto;width:15vw"><p style="text-align: left;">
+		<h4>
+		  {% csrf_token %} 
+		  {{ form.as_p }}
+		<h4>
+		<br>
+		  <input type="submit" value="{% trans 'Log in' %}" />
+		  <input type="hidden" name="next" value="{{ next }}" />
+		<br>
+		<br>
+		</form>
 
-  <input type="submit" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+		<h5>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}" style="color:#C0C0C0">{% trans "Reset it" %}</a>!</h5>
+		<h5>{% trans "Not member" %}? <a href="{% url 'registration_register' %}" style="color:#C0C0C0">{% trans "Register" %}</a>!</h5>
+	</div>
+	</div>
+</div>
 
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
 {% endblock %}

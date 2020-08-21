@@ -29,12 +29,12 @@ def Contact(request):
         if form.is_valid():
             contact_name = form.cleaned_data['contact_name']
             contact_email = form.cleaned_data['contact_email']
-            phno=form.cleaned_data['phno']
-            content = form.cleaned_data['text']
+            phno=form.cleaned_data['phone_number']
+            content = form.cleaned_data['property_description']
             subject = "A new contact or lead - {}".format(contact_name)
             email = EmailMessage(subject, contact_name + '\n' + contact_email + '\n' + str(phno) +'\n'+content , to=['sathvik.chilakala@gmail.com'])
             email.send()
-            return HttpResponseRedirect('/blog/thanks/') #project-url/app-url       
+            return HttpResponseRedirect('/real_estate/thanks/') #project-url/app-url       
     return render(request,'blogg/blog_contact.html',context)
 
 from .forms import EnqDBForm
